@@ -12,10 +12,10 @@ const meuPrimeiroApp = Vue.createApp({
         }        
     },
     methods: {
-        LimparCampos() {
-           document.location.reload(true);
+        LimparCampos() {                                         
+            Object.assign(this.$data, this.$options.data.call(this));                                              
         }   
     }   
 })
 
-const mountedApp = meuPrimeiroApp.mount('#divPrincipal')
+const mountedApp = meuPrimeiroApp.mount('#divMestre')
