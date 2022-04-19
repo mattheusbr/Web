@@ -1,10 +1,11 @@
 * {
     margin: 0px;
     padding: 0px;
+    font-family: arial,sans-serif;        
 }
 
 body{
-	background-image: url(./fundo.jpg);        
+	background-image: url(./fundo.jpg);
 }
 
 .btnCor {
@@ -45,6 +46,16 @@ body{
     width: 12rem;
     border-radius: 5px;
     border: none;
+}
+
+.formdark input, .formdark select, .formdark button {
+    background-color: rgba(32,33,36,1);    
+    color: white;
+}
+
+.docdark, .docdark p{
+    background-color: rgba(32,33,36,1) !important;    
+    color: white !important;
 }
 
 .ct-direito {
@@ -90,7 +101,6 @@ body{
     background: rgba( 255, 255, 255, 0.7 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4px );
-    -webkit-backdrop-filter: blur( 4px );    
 }
 
 .detalhes{
@@ -102,4 +112,13 @@ body{
     text-align: center;
     margin-top: 20px;
     line-height: 22px;
+}
+
+.btn-check button{
+    width: 5rem !important;
+}
+
+.btn-check input{
+    width:  2rem !important;
+    
 }

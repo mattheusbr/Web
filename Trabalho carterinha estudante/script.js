@@ -7,7 +7,8 @@ const meuPrimeiroApp = Vue.createApp({
             cpf: '',
             rg: '',
             dataNascimento: '',
-            genero: ''
+            genero: '',
+            dark: false
         }        
     },
     methods: {

@@ -7,11 +7,9 @@
     </head>
     <body >
         <div id="divPrincipal" class="mestre">      
-            <button id="trocar-cor" class="btnCor">Modo de cor</button>
-              
-            <div class="ajuste">
+            <div class="ajuste">                
                 <div class="ct-esquerdo">    
-                    <div class="campos">
+                    <div class="campos" v-bind:class="{ formdark: dark }">
                         <input type="text" placeholder="Nome" v-model="nome"></br>    
                         <input type="text" placeholder="Faculdade" v-model="faculdade"></br>             
                         <input type="text" placeholder="Curso" v-model="curso"></br>             
@@ -23,7 +21,11 @@
                             <option value="Masculino">Masculino</option>
                             <option value="Feminino">Feminino</option>
                         </select></br>
-                        <button v-on:click="LimparCampos()">Limpar</button>
+                        <div class="btn-check">
+                            <button v-on:click="LimparCampos()">Limpar</button>
+                            <input id="checkDark" type="checkbox" v-model="dark" />
+                            <label for="checkDark" style="color: white;" >Modo Dark</label>
+                        </div>                        
                     </div>                                              
                 </div>
             </div>
@@ -31,7 +33,7 @@
                 <div class="pt-superior">
                     <img src="./avatar.png">
                 </div>
-                <div class="pt-inferior">
+                <div class="pt-inferior" v-bind:class="{ docdark: dark }">
                     <div class="detalhes">
                         <p><b>Nome : </b></p>
                         <p>{{nome}}</p>
@@ -53,5 +55,4 @@
         </div>  
         <script src="script.js"></script>
     </body>
-
 </html>
