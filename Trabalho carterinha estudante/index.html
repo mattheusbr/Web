@@ -1,26 +1,29 @@
 <html>
     <head> 
         <!-- Feito por: Matheus Ferreira Bruno        -->
+		<script src="http://unpkg.com/vue@next"></script>
         <link rel="stylesheet" href="styles.css">
-        <script src="script.js"></script>
+
     </head>
     <body >
-        <div class="mestre">        
+        <div id="divPrincipal" class="mestre">      
+            <button id="trocar-cor" class="btnCor">Modo de cor</button>
+              
             <div class="ajuste">
                 <div class="ct-esquerdo">    
                     <div class="campos">
-                        <input type="text" id="nome" placeholder="Nome"></br>    
-                        <input type="text" id="faculdade" placeholder="Faculdade"></br>             
-                        <input type="text" id="curso" placeholder="Curso"></br>             
-                        <input type="text" id="cpf" placeholder="CPF"></br>             
-                        <input type="text" id="rg" placeholder="RG"></br>             
-                        <input type="text" id="dataNasc" placeholder="Data de nascimento"></br>  
-                        <select name="generos" id="generos" onclick="PreencherTexto('#d-genero', '#generos')">      
-                            <option value="" selected>Selecione</option>                      
+                        <input type="text" placeholder="Nome" v-model="nome"></br>    
+                        <input type="text" placeholder="Faculdade" v-model="faculdade"></br>             
+                        <input type="text" placeholder="Curso" v-model="curso"></br>             
+                        <input type="text" placeholder="CPF" v-model="cpf"></br>             
+                        <input type="text" placeholder="RG" v-model="rg"></br>             
+                        <input type="text" placeholder="Data de nascimento" v-model="dataNascimento"></br>  
+                        <select name="generos" id="generos" v-model="genero">      
+                            <option value="" selected disabled>Selecione</option>                      
                             <option value="Masculino">Masculino</option>
                             <option value="Feminino">Feminino</option>
                         </select></br>
-                        <button onclick="LimparCampos()">Limpar</button>
+                        <button v-on:click="LimparCampos()">Limpar</button>
                     </div>                                              
                 </div>
             </div>
@@ -31,23 +34,24 @@
                 <div class="pt-inferior">
                     <div class="detalhes">
                         <p><b>Nome : </b></p>
-                        <p id="d-nome"></p>
+                        <p>{{nome}}</p>
                         <p><b>Faculdade: </b></p>
-                        <p id="d-faculdade"></p>
+                        <p>{{faculdade}}</p>
                         <p><b>Curso:</b></p>
-                        <p id="d-curso"></p>
+                        <p>{{curso}}</p>
                         <p><b>CPF : </b></p>
-                        <p id="d-cpf"></p>
+                        <p>{{cpf}}</p>
                         <p><b>RG: </b></p>
-                        <p id="d-rg"></p>
+                        <p>{{rg}}</p>
                         <p><b>Data de nascimento:</b></p>
-                        <p id="d-nascimento"></p>
+                        <p>{{dataNascimento}}</p>
                         <p><b>Gênero:</b></p>
-                        <p id="d-genero"></p>
+                        <p>{{genero}}</p>
                     </div>
                 </div>
             </div>
         </div>  
+        <script src="script.js"></script>
     </body>
 
 </html>
