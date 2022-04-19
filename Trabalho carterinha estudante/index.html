@@ -1,0 +1,53 @@
+<html>
+    <head> 
+        <!-- Feito por: Matheus Ferreira Bruno        -->
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js"></script>
+    </head>
+    <body >
+        <div class="mestre">        
+            <div class="ajuste">
+                <div class="ct-esquerdo">    
+                    <div class="campos">
+                        <input type="text" id="nome" placeholder="Nome"></br>    
+                        <input type="text" id="faculdade" placeholder="Faculdade"></br>             
+                        <input type="text" id="curso" placeholder="Curso"></br>             
+                        <input type="text" id="cpf" placeholder="CPF"></br>             
+                        <input type="text" id="rg" placeholder="RG"></br>             
+                        <input type="text" id="dataNasc" placeholder="Data de nascimento"></br>  
+                        <select name="generos" id="generos" onclick="PreencherTexto('#d-genero', '#generos')">      
+                            <option value="" selected>Selecione</option>                      
+                            <option value="Masculino">Masculino</option>
+                            <option value="Feminino">Feminino</option>
+                        </select></br>
+                        <button onclick="LimparCampos()">Limpar</button>
+                    </div>                                              
+                </div>
+            </div>
+            <div class="ct-direito">
+                <div class="pt-superior">
+                    <img src="./avatar.png">
+                </div>
+                <div class="pt-inferior">
+                    <div class="detalhes">
+                        <p><b>Nome : </b></p>
+                        <p id="d-nome"></p>
+                        <p><b>Faculdade: </b></p>
+                        <p id="d-faculdade"></p>
+                        <p><b>Curso:</b></p>
+                        <p id="d-curso"></p>
+                        <p><b>CPF : </b></p>
+                        <p id="d-cpf"></p>
+                        <p><b>RG: </b></p>
+                        <p id="d-rg"></p>
+                        <p><b>Data de nascimento:</b></p>
+                        <p id="d-nascimento"></p>
+                        <p><b>Gênero:</b></p>
+                        <p id="d-genero"></p>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </body>
+
+</html>
