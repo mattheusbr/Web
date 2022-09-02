@@ -1,0 +1,61 @@
+<html>
+    <head> 
+        <!-- Feito por: Matheus Ferreira Bruno        -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand">Consulta CEP</a>
+            </div>        
+        </nav>        
+        <section id="divMestre" class="mestre">      
+            <div>
+                <div class="input-group mb-3">
+                    <input v-model="cep" type="text" class="form-control" placeholder="Digite seu CEP" v-model="cep" :maxlength="8">                    
+                    <div class="input-group-append">
+                      <button :disabled="carregando" @click="ConsultarCEP()" class="btn btn-outline-secondary btn-lg" type="button">Consultar</button>                      
+                    </div>
+                </div>                      
+            </div>
+            <div class="card" >
+                <div class="card-header text-center text-dark">
+                  Detalhes
+                </div>                
+                <div class="card-body">
+                    <a class="text-danger" :hidden="erro">{{msgErro}}</a>
+                    <form>
+                        <div class="form-row">
+                            <div class="col-7">
+                                <label for="cidade">Cidade</label>
+                                <input id="cidade" type="text" class="form-control" placeholder="Cidade" v-model="dadosCep.localidade" disabled>
+                            </div>
+                            <div class="col">
+                                <label for="estado">Estado</label>
+                                <input id="estado" type="text" class="form-control" placeholder="Estado" v-model="dadosCep.uf" disabled>
+                            </div>
+                            <div class="col">
+                                <label for="cep">CEP</label>
+                                <input id="cep" type="text" class="form-control" placeholder="CEP" v-model="dadosCep.cep" disabled>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-9">
+                                <label for="endereco">Endereço</label>
+                                <input type="text" class="form-control" id="endereco" placeholder="Endereço" v-model="dadosCep.logradouro" disabled>
+                            </div>                            
+                            <div class="col">
+                                <label for="bairro">Bairro</label>
+                                <input type="text" class="form-control" id="bairro" placeholder="Bairro" v-model="dadosCep.bairro   " disabled>
+                            </div>  
+                        </div>
+                    </form>
+                </div>
+              </div>
+        </div>         
+    </body>
+    <script src="http://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+</html>
